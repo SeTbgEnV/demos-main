@@ -1,0 +1,17 @@
+@import url('./navigation.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.head-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    list-style-type: none;
+}
