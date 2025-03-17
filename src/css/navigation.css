@@ -1,18 +1,19 @@
 /* Create the basic menu for mobile first... */
 
-header{
-    position: stricky;
+header {
+    position: sticky;
     top: 0;
     left: 0;
-    background: #adafaf;
+    background: #080909bd;
     opacity: 0.9;
 }
 
-nav{
+nav {
     padding: 0 1rem;
+    color: rgb(201, 201, 201);
 }
 
-nav ul{
+nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,33 +21,42 @@ nav ul{
     list-style: none;
 }
 
-nav ul li.logo{
+nav ul li.logo {
     font-size: 1.1rem;
 }
 
-nav ul li.logo a{
-    color: #f00a12;
+nav ul li.logo a {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
-nav ul li.toggle{
+nav ul li.logo img.logo-img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+nav ul li.toggle {
     order: 1;
 }
 
-nav ul li.menu-item{
+nav ul li.menu-item {
     width: 100%;
     text-align: center;
-    order: 2;
     display: none;
 }
 
-nav ul li a{
+nav ul li a {
     display: block;
     padding: 0.4rem;
     color: #f4f4f4;
 }
 
 nav ul li a:hover,
-nav ul li a.active{
+nav ul li a.active {
     color: #ef6c00;
 }
 
@@ -56,16 +66,16 @@ nav ul:has(li .menu-btn:checked) .menu-item {
 }
 
 /* Create the hamburger menu... */
-nav ul li .menu-btn{
+nav ul li .menu-btn {
     display: none;
 }
 
-nav ul li .menu-icon{
+nav ul li .menu-icon {
     padding: 28px 20px;
     cursor: pointer;
 }
 
-nav ul li .menu-icon .nav-icon{
+nav ul li .menu-icon .nav-icon {
     background: #f4f4f4;
     display: block;
     height: 2px;
@@ -75,9 +85,9 @@ nav ul li .menu-icon .nav-icon{
 }
 
 nav ul li .menu-icon .nav-icon:before,
-nav ul li .menu-icon .nav-icon:after{
+nav ul li .menu-icon .nav-icon:after {
     background-color: #f4f4f4;
-    content:'';
+    content: '';
     display: block;
     height: 100%;
     width: 100%;
@@ -85,65 +95,87 @@ nav ul li .menu-icon .nav-icon:after{
     transition: all 0.2s ease-out;
 }
 
-nav ul li .menu-icon .nav-icon:before{
+nav ul li .menu-icon .nav-icon:before {
     top: -5px;
 }
 
-nav ul li .menu-icon .nav-icon:after{
+nav ul li .menu-icon .nav-icon:after {
     top: 5px;
 }
 
 /* Animate the hamburger menu... */
-nav ul li .menu-btn:checked ~ .menu-icon .nav-icon{
+nav ul li .menu-btn:checked~.menu-icon .nav-icon {
     background: transparent;
 }
 
 /* Rotate the first line... */
-nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::before{
+nav ul li .menu-btn:checked~.menu-icon .nav-icon::before {
     transform: rotate(-45deg);
     top: 0;
 }
 
 /* Rotate the second line... */
-nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::after{
+nav ul li .menu-btn:checked~.menu-icon .nav-icon::after {
     transform: rotate(45deg);
     top: 0;
 }
-.box1{
+
+.box1 {
     background: #f4f4f4;
     padding: 1rem;
     margin: 1rem;
     width: 100vw;
     height: 60vh;
-    border: #f00a12 1px solid;
-    border-radius: 0.5rem;
+    border: #000000 1px solid;
+    border-radius: 0.5rem;;
 }
-.box2{
+
+.box2 {
     background: #f4f4f4;
     padding: 2rem;
     margin: 1rem;
     width: 50vw;
-    border: #f00a12 1px solid;
+    height: 60vh;
+    border: #000000 1px solid;
     border-radius: 0.5rem;
 }
 
 /*  MEDIA QUERIES */
 
-@media(min-width: 768px){
-    nav ul{
+@media(min-width: 768px) {
+    nav ul {
         flex-wrap: nowrap;
     }
 
-    nav ul li.menu-item{
-        display: blcok;
-        width: auto;
-    }
+    @media(min-width: 800px) {
+        nav ul {
+            flex-wrap: wrap;
+        }
 
-    nav ul li.logo{
-        flex-grow: none;
-    }
+        @media(min-width: 1200px) {
+            nav ul {
+                flex-wrap: nowrap;
+            }
 
-    nav ul li .toggle{
-        display: none;
+            nav ul li .menu-icon .nav-icon:before,
+            nav ul li .menu-icon .nav-icon:after,
+            nav ul li .menu-icon .nav-icon {
+                display: none;
+            }
+
+
+            nav ul li.menu-item {
+                display: block;
+                width: auto;
+            }
+
+            nav ul li.logo {
+                flex-grow: none;
+            }
+
+            nav ul li .toggle {
+                display: none;
+            }
+        }
     }
 }
