@@ -15,3 +15,17 @@
     gap: 1rem;
     list-style-type: none;
 }
+.container-2{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+.container-3{
+    flex-wrap: nowrap;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    align-content: center;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, 1fr);
+}

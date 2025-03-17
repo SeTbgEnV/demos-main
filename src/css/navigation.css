@@ -109,6 +109,23 @@ nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::after{
     transform: rotate(45deg);
     top: 0;
 }
+.box1{
+    background: #f4f4f4;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100vw;
+    height: 60vh;
+    border: #f00a12 1px solid;
+    border-radius: 0.5rem;
+}
+.box2{
+    background: #f4f4f4;
+    padding: 2rem;
+    margin: 1rem;
+    width: 50vw;
+    border: #f00a12 1px solid;
+    border-radius: 0.5rem;
+}
 
 /*  MEDIA QUERIES */
 
